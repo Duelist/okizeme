@@ -1,0 +1,31 @@
+{
+  "name": "okizeme-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-local": "env DEBUG='*' ./node_modules/nodemon/bin/nodemon.js index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duelist/okizeme-api.git"
+  },
+  "author": "Ian Benedict",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duelist/okizeme-api/issues"
+  },
+  "homepage": "https://github.com/duelist/okizeme-api#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "got": "^6.7.1",
+    "koa": "^1.2.4",
+    "koa-router": "^5.3.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
