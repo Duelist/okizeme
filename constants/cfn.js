@@ -7,9 +7,9 @@ const HEADERS = {
 const HOST = 'https://api.prod.capcomfighters.net/bentov2/sf5'
 
 const URL = {
-  PROFILE : `${HOST}/myinfo/${AUTH_ID}/fighterlicense`,
+  PROFILE       : `${HOST}/myinfo/${AUTH_ID}/fighterlicense`,
   SEARCH_CFN_ID : `${HOST}/myinfo/${AUTH_ID}/searchrival/fightersid`,
-  RANKING : `${HOST}/contents/${AUTH_ID}/ranking`,
+  RANKING       : `${HOST}/contents/${AUTH_ID}/ranking`,
 }
 
 
