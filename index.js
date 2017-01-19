@@ -20,7 +20,7 @@ let app = koa()
 
 
 router
-  .get('/profile/:id', function* (next) {
+  .get('/search/:id', function* (next) {
     let response = yield cfnUtil.searchByCFNId(this.params.id)
     this.body    = response
   })

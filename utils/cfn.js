@@ -11,8 +11,25 @@ let CFN = requireRoot('constants/cfn')
  * @return {Object}
  */
 function* getRanking() {
-  let url = `${CFN.URL.RANKING};page=1`
-  return yield _sendCFNRequest(url)
+
+  let urls = [
+    `${CFN.URL.RANKING};page=1`,
+    `${CFN.URL.RANKING};page=2`,
+    `${CFN.URL.RANKING};page=3`,
+    `${CFN.URL.RANKING};page=4`,
+  ]
+
+  let results = yield urls.map(url => _sendCFNRequest(url))
+  results     = (
+    _(results)
+    .map(result => result[0])
+    .map('rankingresult')
+    .flatten()
+    .value()
+  )
+
+  return results
+
 }
 
 
@@ -23,8 +40,9 @@ function* getRanking() {
  * @return {Object}
  */
 function* searchByCFNId(cfnId) {
-  let url = `${CFN.URL.SEARCH_CFN_ID};id=${cfnId};sort=lp;page=1;sortdir=a`
-  return yield _sendCFNRequest(url)
+  let url    = `${CFN.URL.SEARCH_CFN_ID};id=${cfnId};sort=lp;page=1;sortdir=a`
+  let result = yield _sendCFNRequest(url)
+  return result[0].searchresult
 }
 
 
