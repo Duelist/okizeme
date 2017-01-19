@@ -1,10 +1,11 @@
 require('./globals')
 
-let co     = require('co')
-let koa    = require('koa')
-let router = require('koa-router')();
+let co             = require('co')
+let koa            = require('koa')
+let router         = require('koa-router')();
 
-let cfnUtil = requireRoot('utils/cfn')
+let handleResponse = requireRoot('middleware/handle-response')
+let cfnUtil        = requireRoot('utils/cfn')
 
 
 
@@ -19,11 +20,11 @@ let app = koa()
 
 
 router
-  .get('/v1/profile/:id', function* (next) {
-    let response = yield cfnUtil.searchByCFNId(id)
+  .get('/profile/:id', function* (next) {
+    let response = yield cfnUtil.searchByCFNId(this.params.id)
     this.body    = response
   })
-  .get('/v1/ranking', function* (next) {
+  .get('/ranking', function* (next) {
     let response = yield cfnUtil.getRanking()
     this.body    = response
   })
@@ -33,6 +34,7 @@ router
 
 
 app
+  .use(handleResponse)
   .use(router.routes())
   .use(router.allowedMethods())
 
