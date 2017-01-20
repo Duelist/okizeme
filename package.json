@@ -1,5 +1,5 @@
 {
-  "name": "okizeme-api",
+  "name": "okizeme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duelist/okizeme-api.git"
+    "url": "git+https://github.com/duelist/okizeme.git"
   },
   "author": "Ian Benedict",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/duelist/okizeme-api/issues"
+    "url": "https://github.com/duelist/okizeme/issues"
   },
-  "homepage": "https://github.com/duelist/okizeme-api#readme",
+  "homepage": "https://github.com/duelist/okizeme#readme",
   "dependencies": {
     "co": "^4.6.0",
     "got": "^6.7.1",
