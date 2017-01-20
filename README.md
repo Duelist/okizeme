@@ -1,1 +1,1 @@
-# okizeme-api
+# okizeme
