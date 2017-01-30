@@ -1,5 +1,5 @@
 {
-  "name": "okizeme-mobile",
+  "name": "okizeme-web",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {},
@@ -11,14 +11,19 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-preset-react": "^6.22.0",
     "eslint": "^3.14.1",
+    "jest": "^18.1.0",
     "webpack": "beta"
   }
 }
