@@ -24,14 +24,16 @@ let app = new koa()
 
 
 router
-  .get('/search/:id', co.wrap(function* (next) {
-    let response = yield cfnUtil.searchByCFNId(this.params.id)
-    this.body    = response
-  }))
-  .get('/ranking', co.wrap(function* (next) {
-    let response = yield cfnUtil.getRanking()
-    this.body    = response
-  }))
+  .get('/search/:id', function (ctx, next) {
+    cfnUtil.searchByCFNId(this.params.id).then((response) => {
+      this.body = response
+    })
+  })
+  .get('/ranking', function (ctx, next) {
+    cfnUtil.getRanking().then((response) => {
+      this.body = response
+    })
+  })
   .get('/graph', graphqlKoa({ schema: graphSchema }))
 
 
