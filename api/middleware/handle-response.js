@@ -2,18 +2,20 @@
  * Creates a formal response out of the body and the state meta.
  * @param {Generator} next
  */
-function* handleResponse(next) {
+function handleResponse(ctx, next) {
 
-  this.state.meta = {}
+  ctx.state.meta = {}
 
-  yield next
+  return next().then(() => {
 
-  let payload = {
-    meta     : this.state.meta,
-    response : this.body,
-  }
+    let payload = {
+      meta     : ctx.state.meta,
+      response : ctx.body,
+    }
 
-  this.body = payload
+    ctx.body = payload
+
+  })
 
 }
 
